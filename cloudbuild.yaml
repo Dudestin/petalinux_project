@@ -1,9 +1,9 @@
 steps:
 - name: 'asia.gcr.io/armbuilder/petalinux'
-  args: ['su', 'peta_builder', '&&', 'petalinux-build']
+  args: ['bash', '-c', 'su peta_builder && petalinux-build']
   dir: './$REPO_NAME'
 options:
-  machineType: 'N1_HIGHCPU_32'
+  machineType: 'N1_HIGHCPU_8'
   logStreamingOption: STREAM_ON
 artifacts:
   objects:
