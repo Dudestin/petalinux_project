@@ -1,6 +1,3 @@
-steps:
-- name: 'gcr.io/cloud-builders/git'
-  args: ['clone', 'ssh://splashkakaponear@gmail.com@source.developers.google.com:2022/p/armbuilder/r/ultra96v2_test_project']
 - name: 'asia.gcr.io/armbuilder/petalinux'
   args: ['su', 'peta_builder', '&&', 'petalinux-build']
   dir: './$REPO_NAME'
