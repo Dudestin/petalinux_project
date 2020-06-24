@@ -1,6 +1,6 @@
 steps:
 - name: 'asia.gcr.io/armbuilder/petalinux'
-  args: ['bash', '/opt/petalinux/init.sh']
+  args: ['bash', '/home/peta_builder/init.sh']
   dir: './$REPO_NAME'
 options:
   machineType: 'N1_HIGHCPU_8'
