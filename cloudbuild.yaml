@@ -1,0 +1,14 @@
+steps:
+- name: 'gcr.io/cloud-builders/git'
+  args: ['clone', 'ssh://splashkakaponear@gmail.com@source.developers.google.com:2022/p/armbuilder/r/ultra96v2_test_project']
+- name: 'asia.gcr.io/armbuilder/petalinux'
+  args: ['su', '$USER_NAME', '&&', 'petalinux-build']
+  dir: './$REPO_NAME'
+  env: ['USER_NAME=peta_builder']
+options:
+  machineType: 'N1_HIGHCPU_32'
+  logStreamingOption: STREAM_ON
+artifacts:
+  objects:
+    location: 'gs://build_artifact_dudestin/'
+    paths: ['./$REPO_NAME/images']
